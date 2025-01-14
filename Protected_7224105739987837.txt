@@ -1623,7 +1623,9 @@ UIS.InputBegan:Connect(
                                 if V_Active == false then
                                     planet = nil
                                     center = nil
-                                    nearestTarget.Character.HumanoidRootPart.Size = Vector3.new(2,2,1)
+                                    if nearestTarget ~= nil and nearestTarget.Character ~= nil and nearestTarget.Character.HumanoidRootPart ~= nil then
+                                    nearestTarget.Character:WaitForChild('HumanoidRootPart').Size = Vector3.new(2,2,1)
+                                    end
                                     nearestTarget = ""
                                     return
                                 else
