@@ -1,1298 +1,379 @@
---[[ ██╗  ██╗ █████╗ ██████╗         ███╗   ███╗ █████╗ ██████╗ ███████╗    ██████╗ ██╗   ██╗    ██████╗ ██████╗ ██████╗  █████╗ ███╗   ██╗████████╗████████╗
-╚██╗██╔╝██╔══██╗██╔══██╗        ████╗ ████║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗╚██╗ ██╔╝    ╚════██╗╚════██╗╚════██╗██╔══██╗████╗  ██║╚══██╔══╝╚══██╔══╝
- ╚███╔╝ ███████║██████╔╝        ██╔████╔██║███████║██║  ██║█████╗      ██████╔╝ ╚████╔╝      █████╔╝ █████╔╝ █████╔╝███████║██╔██╗ ██║   ██║      ██║   
- ██╔██╗ ██╔══██║██╔══██╗        ██║╚██╔╝██║██╔══██║██║  ██║██╔══╝      ██╔══██╗  ╚██╔╝      ██╔═══╝ ██╔═══╝ ██╔═══╝ ██╔══██║██║╚██╗██║   ██║      ██║   
-██╔╝ ██╗██║  ██║██║  ██║        ██║ ╚═╝ ██║██║  ██║██████╔╝███████╗    ██████╔╝   ██║       ███████╗███████╗███████╗██║  ██║██║ ╚████║   ██║      ██║   
-╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝        ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝    ╚═════╝    ╚═╝       ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝      ╚═╝            
-]]
---[[
-    dont skid this script u bum quit looking at my source
-]]
-task.spawn(function()
-
-	local XarGui1 = Instance.new("ScreenGui")
-	local BaseFrame = Instance.new("Frame")
-	local Buttons = Instance.new("Frame")
-	local UIGridLayout = Instance.new("UIGridLayout")
-	local Speed = Instance.new("TextButton")
-	local UICorner = Instance.new("UICorner")
-	local Camlock = Instance.new("TextButton")
-	local UICorner_2 = Instance.new("UICorner")
-	local Orbit = Instance.new("TextButton")
-	local UICorner_3 = Instance.new("UICorner")
-	local Anti = Instance.new("TextButton")
-	local UICorner_4 = Instance.new("UICorner")
-	local CFrameDesync = Instance.new("TextButton")
-	local UICorner_5 = Instance.new("UICorner")
-	local Resolver = Instance.new("TextButton")
-	local UICorner_6 = Instance.new("UICorner")
-	local Fling = Instance.new("TextButton")
-	local UICorner_7 = Instance.new("UICorner")
-	local ESP = Instance.new("TextButton")
-	local UICorner_8 = Instance.new("UICorner")
-	local Xar = Instance.new("TextLabel")
-	local UICorner_9 = Instance.new("UICorner")
-	local Text2 = Instance.new("TextLabel")
-	local SpeedSettings = Instance.new("Frame")
-	local UICorner_10 = Instance.new("UICorner")
-	local Frame = Instance.new("Frame")
-	local UICorner_11 = Instance.new("UICorner")
-	local Keybind = Instance.new("TextBox")
-	local UICorner_12 = Instance.new("UICorner")
-	local Speed_2 = Instance.new("TextBox")
-	local UICorner_13 = Instance.new("UICorner")
-	local Text1 = Instance.new("TextLabel")
-	local Text2_2 = Instance.new("TextLabel")
-	local Xar_2 = Instance.new("TextButton")
-	local OrbitSettings = Instance.new("Frame")
-	local UICorner_14 = Instance.new("UICorner")
-	local Frame_2 = Instance.new("Frame")
-	local UICorner_15 = Instance.new("UICorner")
-	local Keybind_2 = Instance.new("TextBox")
-	local UICorner_16 = Instance.new("UICorner")
-	local Height = Instance.new("TextBox")
-	local UICorner_17 = Instance.new("UICorner")
-	local Text1_2 = Instance.new("TextLabel")
-	local Text2_3 = Instance.new("TextLabel")
-	local Xar_3 = Instance.new("TextButton")
-	local AntiLockSettings = Instance.new("Frame")
-	local UICorner_18 = Instance.new("UICorner")
-	local Frame_3 = Instance.new("Frame")
-	local UICorner_19 = Instance.new("UICorner")
-	local Keybind_3 = Instance.new("TextBox")
-	local UICorner_20 = Instance.new("UICorner")
-	local Mode = Instance.new("TextBox")
-	local UICorner_21 = Instance.new("UICorner")
-	local Text1_3 = Instance.new("TextLabel")
-	local Text2_4 = Instance.new("TextLabel")
-	local Xar_4 = Instance.new("TextButton")
-	local ESPSettings = Instance.new("Frame")
-	local UICorner_22 = Instance.new("UICorner")
-	local Frame_4 = Instance.new("Frame")
-	local UICorner_23 = Instance.new("UICorner")
-	local Keybind_4 = Instance.new("TextBox")
-	local UICorner_24 = Instance.new("UICorner")
-	local Text1_4 = Instance.new("TextLabel")
-	local Text2_5 = Instance.new("TextLabel")
-	local Xar_5 = Instance.new("TextButton")
-	local ResolverSettings = Instance.new("Frame")
-	local UICorner_25 = Instance.new("UICorner")
-	local Frame_5 = Instance.new("Frame")
-	local UICorner_26 = Instance.new("UICorner")
-	local Keybind_5 = Instance.new("TextBox")
-	local UICorner_27 = Instance.new("UICorner")
-	local Text1_5 = Instance.new("TextLabel")
-	local Text2_6 = Instance.new("TextLabel")
-	local Xar_6 = Instance.new("TextButton")
-	local FlingSettings = Instance.new("Frame")
-	local UICorner_28 = Instance.new("UICorner")
-	local Frame_6 = Instance.new("Frame")
-	local UICorner_29 = Instance.new("UICorner")
-	local Keybind_6 = Instance.new("TextBox")
-	local UICorner_30 = Instance.new("UICorner")
-	local Text1_6 = Instance.new("TextLabel")
-	local Text2_7 = Instance.new("TextLabel")
-	local Xar_7 = Instance.new("TextButton")
-	local CamlockSettings = Instance.new("Frame")
-	local UICorner_31 = Instance.new("UICorner")
-	local Frame_7 = Instance.new("Frame")
-	local UICorner_32 = Instance.new("UICorner")
-	local Keybind_7 = Instance.new("TextBox")
-	local UICorner_33 = Instance.new("UICorner")
-	local Offset = Instance.new("TextBox")
-	local UICorner_34 = Instance.new("UICorner")
-	local Text1_7 = Instance.new("TextLabel")
-	local Text2_8 = Instance.new("TextLabel")
-	local Xar_8 = Instance.new("TextButton")
-	local CFrameDesyncSettings = Instance.new("Frame")
-	local UICorner_35 = Instance.new("UICorner")
-	local Frame_8 = Instance.new("Frame")
-	local UICorner_36 = Instance.new("UICorner")
-	local Keybind_8 = Instance.new("TextBox")
-	local UICorner_37 = Instance.new("UICorner")
-	local Radius = Instance.new("TextBox")
-	local UICorner_38 = Instance.new("UICorner")
-	local Text1_8 = Instance.new("TextLabel")
-	local Text2_9 = Instance.new("TextLabel")
-	local Xar_9 = Instance.new("TextButton")
-
-	--Properties:
-
-	XarGui1.Name = "XarGui1"
-	XarGui1.Parent = game.Players.LocalPlayer.PlayerGui
-	XarGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	XarGui1.Enabled = false
-
-	BaseFrame.Name = "BaseFrame"
-	BaseFrame.Parent = XarGui1
-	BaseFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	BaseFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	BaseFrame.BorderSizePixel = 0
-	BaseFrame.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	BaseFrame.Size = UDim2.new(0, 500, 0, 300)
-	BaseFrame.Active = true
-	BaseFrame.Draggable = true
-
-	Buttons.Name = "Buttons"
-	Buttons.Parent = BaseFrame
-	Buttons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Buttons.BackgroundTransparency = 1.000
-	Buttons.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Buttons.BorderSizePixel = 0
-	Buttons.Position = UDim2.new(0.0900000036, 0, 0.126666665, 0)
-	Buttons.Size = UDim2.new(0, 410, 0, 243)
-
-	UIGridLayout.Parent = Buttons
-	UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIGridLayout.CellPadding = UDim2.new(0, 3, 0, 5)
-	UIGridLayout.CellSize = UDim2.new(0, 100, 0, 50)
-
-	Speed.Name = "Speed"
-	Speed.Parent = Buttons
-	Speed.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Speed.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Speed.BorderSizePixel = 0
-	Speed.Position = UDim2.new(0.0700000003, 0, 0.13333334, 0)
-	Speed.Size = UDim2.new(0, 130, 0, 50)
-	Speed.Font = Enum.Font.Unknown
-	Speed.Text = "Speed"
-	Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Speed.TextScaled = true
-	Speed.TextSize = 14.000
-	Speed.TextWrapped = true
-
-	UICorner.Parent = Speed
-
-	Camlock.Name = "Camlock"
-	Camlock.Parent = Buttons
-	Camlock.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Camlock.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Camlock.BorderSizePixel = 0
-	Camlock.Position = UDim2.new(0.629999995, 0, 0.13333334, 0)
-	Camlock.Size = UDim2.new(0, 130, 0, 50)
-	Camlock.Font = Enum.Font.Unknown
-	Camlock.Text = "Camlock"
-	Camlock.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Camlock.TextScaled = true
-	Camlock.TextSize = 14.000
-	Camlock.TextWrapped = true
-
-	UICorner_2.Parent = Camlock
-
-	Orbit.Name = "Orbit"
-	Orbit.Parent = Buttons
-	Orbit.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Orbit.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Orbit.BorderSizePixel = 0
-	Orbit.Position = UDim2.new(0.0700000003, 0, 0.333333343, 0)
-	Orbit.Size = UDim2.new(0, 130, 0, 50)
-	Orbit.Font = Enum.Font.Unknown
-	Orbit.Text = "Orbit Lock"
-	Orbit.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Orbit.TextScaled = true
-	Orbit.TextSize = 14.000
-	Orbit.TextWrapped = true
-
-	UICorner_3.Parent = Orbit
-
-	Anti.Name = "Anti"
-	Anti.Parent = Buttons
-	Anti.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Anti.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Anti.BorderSizePixel = 0
-	Anti.Position = UDim2.new(0.753658533, 0, 0, 0)
-	Anti.Size = UDim2.new(0, 130, 0, 50)
-	Anti.Font = Enum.Font.Unknown
-	Anti.Text = "Anti-Lock"
-	Anti.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Anti.TextScaled = true
-	Anti.TextSize = 14.000
-	Anti.TextWrapped = true
-
-	UICorner_4.Parent = Anti
-
-	CFrameDesync.Name = "CFrameDesync"
-	CFrameDesync.Parent = Buttons
-	CFrameDesync.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	CFrameDesync.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	CFrameDesync.BorderSizePixel = 0
-	CFrameDesync.Position = UDim2.new(0.0700000003, 0, 0.13333334, 0)
-	CFrameDesync.Size = UDim2.new(0, 130, 0, 50)
-	CFrameDesync.Font = Enum.Font.Unknown
-	CFrameDesync.Text = "CFrame Desync"
-	CFrameDesync.TextColor3 = Color3.fromRGB(255, 255, 255)
-	CFrameDesync.TextScaled = true
-	CFrameDesync.TextSize = 14.000
-	CFrameDesync.TextWrapped = true
-
-	UICorner_5.Parent = CFrameDesync
-
-	Resolver.Name = "Resolver"
-	Resolver.Parent = Buttons
-	Resolver.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Resolver.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Resolver.BorderSizePixel = 0
-	Resolver.Position = UDim2.new(0.629999995, 0, 0.13333334, 0)
-	Resolver.Size = UDim2.new(0, 130, 0, 50)
-	Resolver.Font = Enum.Font.Unknown
-	Resolver.Text = "Resolver"
-	Resolver.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Resolver.TextScaled = true
-	Resolver.TextSize = 14.000
-	Resolver.TextWrapped = true
-
-	UICorner_6.Parent = Resolver
-
-	Fling.Name = "Fling"
-	Fling.Parent = Buttons
-	Fling.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Fling.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Fling.BorderSizePixel = 0
-	Fling.Position = UDim2.new(0.0700000003, 0, 0.333333343, 0)
-	Fling.Size = UDim2.new(0, 130, 0, 50)
-	Fling.Font = Enum.Font.Unknown
-	Fling.Text = "Fling"
-	Fling.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Fling.TextScaled = true
-	Fling.TextSize = 14.000
-	Fling.TextWrapped = true
-
-	UICorner_7.Parent = Fling
-
-	ESP.Name = "ESP"
-	ESP.Parent = Buttons
-	ESP.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	ESP.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ESP.BorderSizePixel = 0
-	ESP.Position = UDim2.new(0.349999994, 0, 0.13333334, 0)
-	ESP.Size = UDim2.new(0, 130, 0, 50)
-	ESP.Font = Enum.Font.Unknown
-	ESP.Text = "ESP"
-	ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
-	ESP.TextScaled = true
-	ESP.TextSize = 14.000
-	ESP.TextWrapped = true
-
-	UICorner_8.Parent = ESP
-
-	Xar.Name = "Xar"
-	Xar.Parent = BaseFrame
-	Xar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar.BackgroundTransparency = 1.000
-	Xar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar.BorderSizePixel = 0
-	Xar.Position = UDim2.new(-0.00290124514, 0, -0.000717061339, 0)
-	Xar.Size = UDim2.new(0, 60, 0, 30)
-	Xar.Font = Enum.Font.Unknown
-	Xar.Text = "Xar"
-	Xar.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar.TextScaled = true
-	Xar.TextSize = 14.000
-	Xar.TextWrapped = true
-
-	UICorner_9.Parent = BaseFrame
-
-	Text2.Name = "Text2"
-	Text2.Parent = BaseFrame
-	Text2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2.BackgroundTransparency = 1.000
-	Text2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2.BorderSizePixel = 0
-	Text2.Position = UDim2.new(0.139725834, 0, -0.00148630782, 0)
-	Text2.Size = UDim2.new(0, 360, 0, 30)
-	Text2.Font = Enum.Font.PatrickHand
-	Text2.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2.TextSize = 18.000
-	Text2.TextWrapped = true
-
-	SpeedSettings.Name = "SpeedSettings"
-	SpeedSettings.Parent = XarGui1
-	SpeedSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	SpeedSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	SpeedSettings.BorderSizePixel = 0
-	SpeedSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	SpeedSettings.Size = UDim2.new(0, 500, 0, 300)
-	SpeedSettings.Visible = false
-
-	UICorner_10.Parent = SpeedSettings
-
-	Frame.Parent = SpeedSettings
-	Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_11.Parent = Frame
-
-	Keybind.Name = "Keybind"
-	Keybind.Parent = Frame
-	Keybind.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind.BackgroundTransparency = 0.500
-	Keybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind.BorderSizePixel = 0
-	Keybind.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind.Size = UDim2.new(0, 200, 0, 50)
-	Keybind.Font = Enum.Font.Unknown
-	Keybind.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind.PlaceholderText = "Keybind"
-	Keybind.Text = "Z"
-	Keybind.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind.TextScaled = true
-	Keybind.TextSize = 14.000
-	Keybind.TextWrapped = true
-
-	UICorner_12.Parent = Keybind
-
-	Speed_2.Name = "Speed"
-	Speed_2.Parent = Frame
-	Speed_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Speed_2.BackgroundTransparency = 0.500
-	Speed_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Speed_2.BorderSizePixel = 0
-	Speed_2.Position = UDim2.new(0.250626564, 0, 0.533936679, 0)
-	Speed_2.Size = UDim2.new(0, 200, 0, 50)
-	Speed_2.Font = Enum.Font.Unknown
-	Speed_2.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Speed_2.PlaceholderText = "Speed"
-	Speed_2.Text = "2.5"
-	Speed_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Speed_2.TextScaled = true
-	Speed_2.TextSize = 14.000
-	Speed_2.TextWrapped = true
-
-	UICorner_13.Parent = Speed_2
-
-	Text1.Name = "Text1"
-	Text1.Parent = Frame
-	Text1.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1.BackgroundTransparency = 1.000
-	Text1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1.BorderSizePixel = 0
-	Text1.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1.Size = UDim2.new(0, 283, 0, 50)
-	Text1.Font = Enum.Font.Unknown
-	Text1.Text = "Speed Settings"
-	Text1.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1.TextScaled = true
-	Text1.TextSize = 14.000
-	Text1.TextWrapped = true
-
-	Text2_2.Name = "Text2"
-	Text2_2.Parent = Frame
-	Text2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_2.BackgroundTransparency = 1.000
-	Text2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_2.BorderSizePixel = 0
-	Text2_2.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_2.Size = UDim2.new(0, 360, 0, 30)
-	Text2_2.Font = Enum.Font.PatrickHand
-	Text2_2.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_2.TextSize = 18.000
-	Text2_2.TextWrapped = true
-
-	Xar_2.Name = "Xar"
-	Xar_2.Parent = SpeedSettings
-	Xar_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_2.BackgroundTransparency = 1.000
-	Xar_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_2.BorderSizePixel = 0
-	Xar_2.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_2.Size = UDim2.new(0, 60, 0, 30)
-	Xar_2.Font = Enum.Font.Unknown
-	Xar_2.Text = "Xar"
-	Xar_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_2.TextScaled = true
-	Xar_2.TextSize = 14.000
-	Xar_2.TextWrapped = true
-
-	OrbitSettings.Name = "OrbitSettings"
-	OrbitSettings.Parent = XarGui1
-	OrbitSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	OrbitSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	OrbitSettings.BorderSizePixel = 0
-	OrbitSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	OrbitSettings.Size = UDim2.new(0, 500, 0, 300)
-	OrbitSettings.Visible = false
-
-	UICorner_14.Parent = OrbitSettings
-
-	Frame_2.Parent = OrbitSettings
-	Frame_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_2.BorderSizePixel = 0
-	Frame_2.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame_2.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_15.Parent = Frame_2
-
-	Keybind_2.Name = "Keybind"
-	Keybind_2.Parent = Frame_2
-	Keybind_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_2.BackgroundTransparency = 0.500
-	Keybind_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_2.BorderSizePixel = 0
-	Keybind_2.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind_2.Size = UDim2.new(0, 200, 0, 50)
-	Keybind_2.Font = Enum.Font.Unknown
-	Keybind_2.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_2.PlaceholderText = "Keybind"
-	Keybind_2.Text = "V"
-	Keybind_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_2.TextScaled = true
-	Keybind_2.TextSize = 14.000
-	Keybind_2.TextWrapped = true
-
-	UICorner_16.Parent = Keybind_2
-
-	Height.Name = "Height"
-	Height.Parent = Frame_2
-	Height.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Height.BackgroundTransparency = 0.500
-	Height.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Height.BorderSizePixel = 0
-	Height.Position = UDim2.new(0.250626564, 0, 0.533936679, 0)
-	Height.Size = UDim2.new(0, 200, 0, 50)
-	Height.Font = Enum.Font.Unknown
-	Height.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Height.PlaceholderText = "Height"
-	Height.Text = "25"
-	Height.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Height.TextScaled = true
-	Height.TextSize = 14.000
-	Height.TextWrapped = true
-
-	UICorner_17.Parent = Height
-
-	Text1_2.Name = "Text1"
-	Text1_2.Parent = Frame_2
-	Text1_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1_2.BackgroundTransparency = 1.000
-	Text1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1_2.BorderSizePixel = 0
-	Text1_2.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1_2.Size = UDim2.new(0, 283, 0, 50)
-	Text1_2.Font = Enum.Font.Unknown
-	Text1_2.Text = "Orbit Lock Settings"
-	Text1_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1_2.TextScaled = true
-	Text1_2.TextSize = 14.000
-	Text1_2.TextWrapped = true
-
-	Text2_3.Name = "Text2"
-	Text2_3.Parent = Frame_2
-	Text2_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_3.BackgroundTransparency = 1.000
-	Text2_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_3.BorderSizePixel = 0
-	Text2_3.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_3.Size = UDim2.new(0, 360, 0, 30)
-	Text2_3.Font = Enum.Font.PatrickHand
-	Text2_3.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_3.TextSize = 18.000
-	Text2_3.TextWrapped = true
-
-	Xar_3.Name = "Xar"
-	Xar_3.Parent = OrbitSettings
-	Xar_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_3.BackgroundTransparency = 1.000
-	Xar_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_3.BorderSizePixel = 0
-	Xar_3.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_3.Size = UDim2.new(0, 60, 0, 30)
-	Xar_3.Font = Enum.Font.Unknown
-	Xar_3.Text = "Xar"
-	Xar_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_3.TextScaled = true
-	Xar_3.TextSize = 14.000
-	Xar_3.TextWrapped = true
-
-	AntiLockSettings.Name = "AntiLockSettings"
-	AntiLockSettings.Parent = XarGui1
-	AntiLockSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	AntiLockSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AntiLockSettings.BorderSizePixel = 0
-	AntiLockSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	AntiLockSettings.Size = UDim2.new(0, 500, 0, 300)
-	AntiLockSettings.Visible = false
-
-	UICorner_18.Parent = AntiLockSettings
-
-	Frame_3.Parent = AntiLockSettings
-	Frame_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_3.BorderSizePixel = 0
-	Frame_3.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame_3.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_19.Parent = Frame_3
-
-	Keybind_3.Name = "Keybind"
-	Keybind_3.Parent = Frame_3
-	Keybind_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_3.BackgroundTransparency = 0.500
-	Keybind_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_3.BorderSizePixel = 0
-	Keybind_3.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind_3.Size = UDim2.new(0, 200, 0, 50)
-	Keybind_3.Font = Enum.Font.Unknown
-	Keybind_3.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_3.PlaceholderText = "Keybind"
-	Keybind_3.Text = "Y"
-	Keybind_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_3.TextScaled = true
-	Keybind_3.TextSize = 14.000
-	Keybind_3.TextWrapped = true
-
-	UICorner_20.Parent = Keybind_3
-
-	Mode.Name = "Mode"
-	Mode.Parent = Frame_3
-	Mode.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Mode.BackgroundTransparency = 0.500
-	Mode.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Mode.BorderSizePixel = 0
-	Mode.Position = UDim2.new(0.250626564, 0, 0.533936679, 0)
-	Mode.Size = UDim2.new(0, 200, 0, 50)
-	Mode.Font = Enum.Font.Unknown
-	Mode.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Mode.PlaceholderText = "Mode"
-	Mode.Text = "1"
-	Mode.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Mode.TextScaled = true
-	Mode.TextSize = 14.000
-	Mode.TextWrapped = true
-
-	UICorner_21.Parent = Mode
-
-	Text1_3.Name = "Text1"
-	Text1_3.Parent = Frame_3
-	Text1_3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1_3.BackgroundTransparency = 1.000
-	Text1_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1_3.BorderSizePixel = 0
-	Text1_3.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1_3.Size = UDim2.new(0, 283, 0, 50)
-	Text1_3.Font = Enum.Font.Unknown
-	Text1_3.Text = "Anti-Lock Settings"
-	Text1_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1_3.TextScaled = true
-	Text1_3.TextSize = 14.000
-	Text1_3.TextWrapped = true
-
-	Text2_4.Name = "Text2"
-	Text2_4.Parent = Frame_3
-	Text2_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_4.BackgroundTransparency = 1.000
-	Text2_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_4.BorderSizePixel = 0
-	Text2_4.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_4.Size = UDim2.new(0, 360, 0, 30)
-	Text2_4.Font = Enum.Font.PatrickHand
-	Text2_4.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_4.TextSize = 18.000
-	Text2_4.TextWrapped = true
-
-	Xar_4.Name = "Xar"
-	Xar_4.Parent = AntiLockSettings
-	Xar_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_4.BackgroundTransparency = 1.000
-	Xar_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_4.BorderSizePixel = 0
-	Xar_4.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_4.Size = UDim2.new(0, 60, 0, 30)
-	Xar_4.Font = Enum.Font.Unknown
-	Xar_4.Text = "Xar"
-	Xar_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_4.TextScaled = true
-	Xar_4.TextSize = 14.000
-	Xar_4.TextWrapped = true
-
-	ESPSettings.Name = "ESPSettings"
-	ESPSettings.Parent = XarGui1
-	ESPSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	ESPSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ESPSettings.BorderSizePixel = 0
-	ESPSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	ESPSettings.Size = UDim2.new(0, 500, 0, 300)
-	ESPSettings.Visible = false
-
-	UICorner_22.Parent = ESPSettings
-
-	Frame_4.Parent = ESPSettings
-	Frame_4.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_4.BorderSizePixel = 0
-	Frame_4.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame_4.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_23.Parent = Frame_4
-
-	Keybind_4.Name = "Keybind"
-	Keybind_4.Parent = Frame_4
-	Keybind_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_4.BackgroundTransparency = 0.500
-	Keybind_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_4.BorderSizePixel = 0
-	Keybind_4.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind_4.Size = UDim2.new(0, 200, 0, 50)
-	Keybind_4.Font = Enum.Font.Unknown
-	Keybind_4.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_4.PlaceholderText = "Keybind"
-	Keybind_4.Text = "L"
-	Keybind_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_4.TextScaled = true
-	Keybind_4.TextSize = 14.000
-	Keybind_4.TextWrapped = true
-
-	UICorner_24.Parent = Keybind_4
-
-	Text1_4.Name = "Text1"
-	Text1_4.Parent = Frame_4
-	Text1_4.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1_4.BackgroundTransparency = 1.000
-	Text1_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1_4.BorderSizePixel = 0
-	Text1_4.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1_4.Size = UDim2.new(0, 283, 0, 50)
-	Text1_4.Font = Enum.Font.Unknown
-	Text1_4.Text = "ESP Settings"
-	Text1_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1_4.TextScaled = true
-	Text1_4.TextSize = 14.000
-	Text1_4.TextWrapped = true
-
-	Text2_5.Name = "Text2"
-	Text2_5.Parent = Frame_4
-	Text2_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_5.BackgroundTransparency = 1.000
-	Text2_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_5.BorderSizePixel = 0
-	Text2_5.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_5.Size = UDim2.new(0, 360, 0, 30)
-	Text2_5.Font = Enum.Font.PatrickHand
-	Text2_5.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_5.TextSize = 18.000
-	Text2_5.TextWrapped = true
-
-	Xar_5.Name = "Xar"
-	Xar_5.Parent = ESPSettings
-	Xar_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_5.BackgroundTransparency = 1.000
-	Xar_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_5.BorderSizePixel = 0
-	Xar_5.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_5.Size = UDim2.new(0, 60, 0, 30)
-	Xar_5.Font = Enum.Font.Unknown
-	Xar_5.Text = "Xar"
-	Xar_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_5.TextScaled = true
-	Xar_5.TextSize = 14.000
-	Xar_5.TextWrapped = true
-
-	ResolverSettings.Name = "ResolverSettings"
-	ResolverSettings.Parent = XarGui1
-	ResolverSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	ResolverSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ResolverSettings.BorderSizePixel = 0
-	ResolverSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	ResolverSettings.Size = UDim2.new(0, 500, 0, 300)
-	ResolverSettings.Visible = false
-
-	UICorner_25.Parent = ResolverSettings
-
-	Frame_5.Parent = ResolverSettings
-	Frame_5.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_5.BorderSizePixel = 0
-	Frame_5.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame_5.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_26.Parent = Frame_5
-
-	Keybind_5.Name = "Keybind"
-	Keybind_5.Parent = Frame_5
-	Keybind_5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_5.BackgroundTransparency = 0.500
-	Keybind_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_5.BorderSizePixel = 0
-	Keybind_5.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind_5.Size = UDim2.new(0, 200, 0, 50)
-	Keybind_5.Font = Enum.Font.Unknown
-	Keybind_5.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_5.PlaceholderText = "Keybind"
-	Keybind_5.Text = "U"
-	Keybind_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_5.TextScaled = true
-	Keybind_5.TextSize = 14.000
-	Keybind_5.TextWrapped = true
-
-	UICorner_27.Parent = Keybind_5
-
-	Text1_5.Name = "Text1"
-	Text1_5.Parent = Frame_5
-	Text1_5.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1_5.BackgroundTransparency = 1.000
-	Text1_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1_5.BorderSizePixel = 0
-	Text1_5.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1_5.Size = UDim2.new(0, 283, 0, 50)
-	Text1_5.Font = Enum.Font.Unknown
-	Text1_5.Text = "Resolver Settings"
-	Text1_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1_5.TextScaled = true
-	Text1_5.TextSize = 14.000
-	Text1_5.TextWrapped = true
-
-	Text2_6.Name = "Text2"
-	Text2_6.Parent = Frame_5
-	Text2_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_6.BackgroundTransparency = 1.000
-	Text2_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_6.BorderSizePixel = 0
-	Text2_6.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_6.Size = UDim2.new(0, 360, 0, 30)
-	Text2_6.Font = Enum.Font.PatrickHand
-	Text2_6.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_6.TextSize = 18.000
-	Text2_6.TextWrapped = true
-
-	Xar_6.Name = "Xar"
-	Xar_6.Parent = ResolverSettings
-	Xar_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_6.BackgroundTransparency = 1.000
-	Xar_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_6.BorderSizePixel = 0
-	Xar_6.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_6.Size = UDim2.new(0, 60, 0, 30)
-	Xar_6.Font = Enum.Font.Unknown
-	Xar_6.Text = "Xar"
-	Xar_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_6.TextScaled = true
-	Xar_6.TextSize = 14.000
-	Xar_6.TextWrapped = true
-
-	FlingSettings.Name = "FlingSettings"
-	FlingSettings.Parent = XarGui1
-	FlingSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	FlingSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	FlingSettings.BorderSizePixel = 0
-	FlingSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	FlingSettings.Size = UDim2.new(0, 500, 0, 300)
-	FlingSettings.Visible = false
-
-	UICorner_28.Parent = FlingSettings
-
-	Frame_6.Parent = FlingSettings
-	Frame_6.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_6.BorderSizePixel = 0
-	Frame_6.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame_6.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_29.Parent = Frame_6
-
-	Keybind_6.Name = "Keybind"
-	Keybind_6.Parent = Frame_6
-	Keybind_6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_6.BackgroundTransparency = 0.500
-	Keybind_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_6.BorderSizePixel = 0
-	Keybind_6.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind_6.Size = UDim2.new(0, 200, 0, 50)
-	Keybind_6.Font = Enum.Font.Unknown
-	Keybind_6.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_6.PlaceholderText = "Keybind"
-	Keybind_6.Text = "H"
-	Keybind_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_6.TextScaled = true
-	Keybind_6.TextSize = 14.000
-	Keybind_6.TextWrapped = true
-
-	UICorner_30.Parent = Keybind_6
-
-	Text1_6.Name = "Text1"
-	Text1_6.Parent = Frame_6
-	Text1_6.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1_6.BackgroundTransparency = 1.000
-	Text1_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1_6.BorderSizePixel = 0
-	Text1_6.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1_6.Size = UDim2.new(0, 283, 0, 50)
-	Text1_6.Font = Enum.Font.Unknown
-	Text1_6.Text = "Fling Setings"
-	Text1_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1_6.TextScaled = true
-	Text1_6.TextSize = 14.000
-	Text1_6.TextWrapped = true
-
-	Text2_7.Name = "Text2"
-	Text2_7.Parent = Frame_6
-	Text2_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_7.BackgroundTransparency = 1.000
-	Text2_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_7.BorderSizePixel = 0
-	Text2_7.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_7.Size = UDim2.new(0, 360, 0, 30)
-	Text2_7.Font = Enum.Font.PatrickHand
-	Text2_7.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_7.TextSize = 18.000
-	Text2_7.TextWrapped = true
-
-	Xar_7.Name = "Xar"
-	Xar_7.Parent = FlingSettings
-	Xar_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_7.BackgroundTransparency = 1.000
-	Xar_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_7.BorderSizePixel = 0
-	Xar_7.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_7.Size = UDim2.new(0, 60, 0, 30)
-	Xar_7.Font = Enum.Font.Unknown
-	Xar_7.Text = "Xar"
-	Xar_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_7.TextScaled = true
-	Xar_7.TextSize = 14.000
-	Xar_7.TextWrapped = true
-
-	CamlockSettings.Name = "CamlockSettings"
-	CamlockSettings.Parent = XarGui1
-	CamlockSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	CamlockSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	CamlockSettings.BorderSizePixel = 0
-	CamlockSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	CamlockSettings.Size = UDim2.new(0, 500, 0, 300)
-	CamlockSettings.Visible = false
-
-	UICorner_31.Parent = CamlockSettings
-
-	Frame_7.Parent = CamlockSettings
-	Frame_7.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_7.BorderSizePixel = 0
-	Frame_7.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame_7.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_32.Parent = Frame_7
-
-	Keybind_7.Name = "Keybind"
-	Keybind_7.Parent = Frame_7
-	Keybind_7.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_7.BackgroundTransparency = 0.500
-	Keybind_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_7.BorderSizePixel = 0
-	Keybind_7.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind_7.Size = UDim2.new(0, 200, 0, 50)
-	Keybind_7.Font = Enum.Font.Unknown
-	Keybind_7.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_7.PlaceholderText = "Keybind"
-	Keybind_7.Text = "X"
-	Keybind_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_7.TextScaled = true
-	Keybind_7.TextSize = 14.000
-	Keybind_7.TextWrapped = true
-
-	UICorner_33.Parent = Keybind_7
-
-	Offset.Name = "Offset"
-	Offset.Parent = Frame_7
-	Offset.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Offset.BackgroundTransparency = 0.500
-	Offset.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Offset.BorderSizePixel = 0
-	Offset.Position = UDim2.new(0.250626564, 0, 0.533936679, 0)
-	Offset.Size = UDim2.new(0, 200, 0, 50)
-	Offset.Font = Enum.Font.Unknown
-	Offset.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Offset.PlaceholderText = "Offset"
-	Offset.Text = ".15"
-	Offset.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Offset.TextScaled = true
-	Offset.TextSize = 14.000
-	Offset.TextWrapped = true
-
-	UICorner_34.Parent = Offset
-
-	Text1_7.Name = "Text1"
-	Text1_7.Parent = Frame_7
-	Text1_7.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1_7.BackgroundTransparency = 1.000
-	Text1_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1_7.BorderSizePixel = 0
-	Text1_7.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1_7.Size = UDim2.new(0, 283, 0, 50)
-	Text1_7.Font = Enum.Font.Unknown
-	Text1_7.Text = "Camlock Settings"
-	Text1_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1_7.TextScaled = true
-	Text1_7.TextSize = 14.000
-	Text1_7.TextWrapped = true
-
-	Text2_8.Name = "Text2"
-	Text2_8.Parent = Frame_7
-	Text2_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_8.BackgroundTransparency = 1.000
-	Text2_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_8.BorderSizePixel = 0
-	Text2_8.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_8.Size = UDim2.new(0, 360, 0, 30)
-	Text2_8.Font = Enum.Font.PatrickHand
-	Text2_8.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_8.TextSize = 18.000
-	Text2_8.TextWrapped = true
-
-	Xar_8.Name = "Xar"
-	Xar_8.Parent = CamlockSettings
-	Xar_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_8.BackgroundTransparency = 1.000
-	Xar_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_8.BorderSizePixel = 0
-	Xar_8.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_8.Size = UDim2.new(0, 60, 0, 30)
-	Xar_8.Font = Enum.Font.Unknown
-	Xar_8.Text = "Xar"
-	Xar_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_8.TextScaled = true
-	Xar_8.TextSize = 14.000
-	Xar_8.TextWrapped = true
-
-	CFrameDesyncSettings.Name = "CFrameDesyncSettings"
-	CFrameDesyncSettings.Parent = XarGui1
-	CFrameDesyncSettings.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	CFrameDesyncSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	CFrameDesyncSettings.BorderSizePixel = 0
-	CFrameDesyncSettings.Position = UDim2.new(0.307098776, 0, 0.259282976, 0)
-	CFrameDesyncSettings.Size = UDim2.new(0, 500, 0, 300)
-	CFrameDesyncSettings.Visible = false
-
-	UICorner_35.Parent = CFrameDesyncSettings
-
-	Frame_8.Parent = CFrameDesyncSettings
-	Frame_8.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	Frame_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_8.BorderSizePixel = 0
-	Frame_8.Position = UDim2.new(0.100000001, 0, 0.166666672, 0)
-	Frame_8.Size = UDim2.new(0, 399, 0, 221)
-
-	UICorner_36.Parent = Frame_8
-
-	Keybind_8.Name = "Keybind"
-	Keybind_8.Parent = Frame_8
-	Keybind_8.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_8.BackgroundTransparency = 0.500
-	Keybind_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Keybind_8.BorderSizePixel = 0
-	Keybind_8.Position = UDim2.new(0.250626564, 0, 0.235294119, 0)
-	Keybind_8.Size = UDim2.new(0, 200, 0, 50)
-	Keybind_8.Font = Enum.Font.Unknown
-	Keybind_8.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_8.PlaceholderText = "Keybind"
-	Keybind_8.Text = "B"
-	Keybind_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Keybind_8.TextScaled = true
-	Keybind_8.TextSize = 14.000
-	Keybind_8.TextWrapped = true
-
-	UICorner_37.Parent = Keybind_8
-
-	Radius.Name = "Radius"
-	Radius.Parent = Frame_8
-	Radius.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Radius.BackgroundTransparency = 0.500
-	Radius.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Radius.BorderSizePixel = 0
-	Radius.Position = UDim2.new(0.250626564, 0, 0.533936679, 0)
-	Radius.Size = UDim2.new(0, 200, 0, 50)
-	Radius.Font = Enum.Font.Unknown
-	Radius.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-	Radius.PlaceholderText = "Radius"
-	Radius.Text = "10"
-	Radius.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Radius.TextScaled = true
-	Radius.TextSize = 14.000
-	Radius.TextWrapped = true
-
-	UICorner_38.Parent = Radius
-
-	Text1_8.Name = "Text1"
-	Text1_8.Parent = Frame_8
-	Text1_8.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Text1_8.BackgroundTransparency = 1.000
-	Text1_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text1_8.BorderSizePixel = 0
-	Text1_8.Position = UDim2.new(0.145363405, 0, -0.00361985434, 0)
-	Text1_8.Size = UDim2.new(0, 283, 0, 50)
-	Text1_8.Font = Enum.Font.Unknown
-	Text1_8.Text = "CFrame Desync Settings"
-	Text1_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text1_8.TextScaled = true
-	Text1_8.TextSize = 14.000
-	Text1_8.TextWrapped = true
-
-	Text2_9.Name = "Text2"
-	Text2_9.Parent = Frame_8
-	Text2_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_9.BackgroundTransparency = 1.000
-	Text2_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Text2_9.BorderSizePixel = 0
-	Text2_9.Position = UDim2.new(0.0477258191, 0, -0.23148632, 0)
-	Text2_9.Size = UDim2.new(0, 360, 0, 30)
-	Text2_9.Font = Enum.Font.PatrickHand
-	Text2_9.Text = "made by @222antt on rblx and discord | V1.3"
-	Text2_9.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text2_9.TextSize = 18.000
-	Text2_9.TextWrapped = true
-
-	Xar_9.Name = "Xar"
-	Xar_9.Parent = CFrameDesyncSettings
-	Xar_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_9.BackgroundTransparency = 1.000
-	Xar_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Xar_9.BorderSizePixel = 0
-	Xar_9.Position = UDim2.new(-0.00300000003, 0, -0.00100000005, 0)
-	Xar_9.Size = UDim2.new(0, 60, 0, 30)
-	Xar_9.Font = Enum.Font.Unknown
-	Xar_9.Text = "Xar"
-	Xar_9.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Xar_9.TextScaled = true
-	Xar_9.TextSize = 14.000
-	Xar_9.TextWrapped = true
-
-	-- Scripts:
-
-	local function DBUCT_fake_script() -- Speed.LocalScript 
-		local script = Instance.new('LocalScript', Speed)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "SpeedSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(DBUCT_fake_script)()
-	local function WTWP_fake_script() -- Camlock.LocalScript 
-		local script = Instance.new('LocalScript', Camlock)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "CamlockSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(WTWP_fake_script)()
-	local function LULXS_fake_script() -- Orbit.LocalScript 
-		local script = Instance.new('LocalScript', Orbit)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "OrbitSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(LULXS_fake_script)()
-	local function SOVWTAZ_fake_script() -- Anti.LocalScript 
-		local script = Instance.new('LocalScript', Anti)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "AntiLockSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(SOVWTAZ_fake_script)()
-	local function MUBRU_fake_script() -- CFrameDesync.LocalScript 
-		local script = Instance.new('LocalScript', CFrameDesync)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "CFrameDesyncSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(MUBRU_fake_script)()
-	local function RINXZ_fake_script() -- Resolver.LocalScript 
-		local script = Instance.new('LocalScript', Resolver)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "ResolverSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(RINXZ_fake_script)()
-	local function IATLM_fake_script() -- Fling.LocalScript 
-		local script = Instance.new('LocalScript', Fling)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "FlingSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(IATLM_fake_script)()
-	local function DRBYTG_fake_script() -- ESP.LocalScript 
-		local script = Instance.new('LocalScript', ESP)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Visible = false
-			local Frame = "ESPSettings"
-			script.Parent.Parent.Parent.Parent:FindFirstChild(Frame).Visible = true
-		end)
-	end
-	coroutine.wrap(DRBYTG_fake_script)()
-	local function SLZWZ_fake_script() -- Xar_2.LocalScript 
-		local script = Instance.new('LocalScript', Xar_2)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(SLZWZ_fake_script)()
-	local function UUQCCPM_fake_script() -- Xar_3.LocalScript 
-		local script = Instance.new('LocalScript', Xar_3)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(UUQCCPM_fake_script)()
-	local function VGCXB_fake_script() -- Xar_4.LocalScript 
-		local script = Instance.new('LocalScript', Xar_4)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(VGCXB_fake_script)()
-	local function OWOVT_fake_script() -- Xar_5.LocalScript 
-		local script = Instance.new('LocalScript', Xar_5)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(OWOVT_fake_script)()
-	local function CVVFH_fake_script() -- Xar_6.LocalScript 
-		local script = Instance.new('LocalScript', Xar_6)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(CVVFH_fake_script)()
-	local function WDACL_fake_script() -- Xar_7.LocalScript 
-		local script = Instance.new('LocalScript', Xar_7)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(WDACL_fake_script)()
-	local function QXOHAQL_fake_script() -- Xar_8.LocalScript 
-		local script = Instance.new('LocalScript', Xar_8)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(QXOHAQL_fake_script)()
-	local function KTFN_fake_script() -- Xar_9.LocalScript 
-		local script = Instance.new('LocalScript', Xar_9)
-
-		script.Parent.MouseButton1Down:Connect(function()
-			script.Parent.Parent.Parent.BaseFrame.Buttons.Visible = true
-			script.Parent.Parent.Parent:FindFirstChild("SpeedSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CamlockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("OrbitSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("AntiLockSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("CFrameDesyncSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ResolverSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("FlingSettings").Visible = false
-			script.Parent.Parent.Parent:FindFirstChild("ESPSettings").Visible = false
-		end)
-	end
-	coroutine.wrap(KTFN_fake_script)()
-	local function IKEDUIU_fake_script() -- XarGui1.LocalScript
-		local script = Instance.new("LocalScript", XarGui1)
-
-		local UIS = game:GetService("UserInputService")
-		UIS.InputBegan:Connect(
-			function(Input, IsTyping)
-				if Input.KeyCode == Enum.KeyCode.P then
-					if IsTyping then
-						return
-					end
-					script.Parent.Enabled = not script.Parent.Enabled
-				end
-			end
-		)
-	end
-	coroutine.wrap(IKEDUIU_fake_script)()
-
-end)
+--// Main User-Interface \\--
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/7ant/rayfield_ui/refs/heads/main/Rayfield_UI.txt'))()
+
+local Window = Rayfield:CreateWindow({
+       Name = "Xar | Da Hood",
+    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+    LoadingTitle = "Xar v3.1",
+    LoadingSubtitle = "by @x7ant",
+    Theme = "Serenity", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+ 
+    DisableRayfieldPrompts = true,
+    DisableBuildWarnings = true, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+ 
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "XarConfig"
+    },
+ 
+    Discord = {
+       Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+ 
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"Key"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+})
+
+Rayfield:Notify({
+   Title = "Xar | v3.1",
+   Content = "Xar has successfully been loaded.",
+   Duration = 7.5,
+   Image = 4483362458,
+})
+
+local CombatTab = Window:CreateTab("Main", 4483362458)
+local TeleportsTab = Window:CreateTab("Teleports", 4483362458)
+local ConfigsTab = Window:CreateTab("Configs", 4483362458)
+
+-- Main Tab --
+
+local LockSection = CombatTab:CreateSection("Lock")
+
+local Camlock = false
+local Orbit = false
+local InstantKill = false
+local InstantKillVal = false
+
+local CamlockToggle = CombatTab:CreateToggle({
+    Name = "Cam-Lock",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        Camlock = Value
+    end,
+})
+
+local OrbitToggle = CombatTab:CreateToggle({
+    Name = "Orbit-Lock",
+    CurrentValue = false,
+    Flag = "Toggle2",
+    Callback = function(Value)
+        Orbit = Value
+    end,
+})
+
+local KillLastTargetToggle = CombatTab:CreateToggle({
+    Name = "Insta-Kill Last Target",
+    CurrentValue = false,
+    Flag = "Toggle3",
+    Callback = function(Value)
+        InstantKill = Value
+    end,
+})
+
+local InstaKillToggle = CombatTab:CreateToggle({
+    Name = "Insta-Kill Toggle (Camlock + Orbit-Lock)",
+    CurrentValue = false,
+    Flag = "Toggle4",
+    Callback = function(Value)
+        InstantKillVal = Value
+    end,
+})
+
+local SafetySection = CombatTab:CreateSection("Safety")
+
+local AntiLock = false
+local Desync = false
+local Resolver = false
+local AntiStomp = false
+local AutoArmor = false
+
+local AntiLockToggle = CombatTab:CreateToggle({
+    Name = "Anti-Lock",
+    CurrentValue = false,
+    Flag = "Toggle5",
+    Callback = function(Value)
+        AntiLock = Value
+    end,
+})
+
+local DesyncToggle = CombatTab:CreateToggle({
+    Name = "Desync",
+    CurrentValue = false,
+    Flag = "Toggle6",
+    Callback = function(Value)
+        Desync = Value
+    end,
+})
+
+local ResolverToggle = CombatTab:CreateToggle({
+    Name = "Resolver",
+    CurrentValue = false,
+    Flag = "Toggle7",
+    Callback = function(Value)
+        Resolver = Value
+    end,
+})
+
+local AntiStompToggle = CombatTab:CreateToggle({
+    Name = "Anti-Stomp",
+    CurrentValue = false,
+    Flag = "Toggle8",
+    Callback = function(Value)
+        AntiStomp = Value
+    end,
+})
+
+local AutoArmorToggle = CombatTab:CreateToggle({
+    Name = "Auto-Armor",
+    CurrentValue = false,
+    Flag = "Toggle9",
+    Callback = function(Value)
+        AutoArmor = Value
+    end,
+})
+
+local MiscSection = CombatTab:CreateSection("Misc")
+
+local TpTarget = false
+local FlingTarget = false
+local Noclip = false
+local ESP = false
+
+local TpTargetToggle = CombatTab:CreateToggle({
+    Name = "Teleport To Last Target",
+    CurrentValue = false,
+    Flag = "Toggle10",
+    Callback = function(Value)
+        TpTarget = Value
+    end,
+})
+
+local FlingTargetToggle = CombatTab:CreateToggle({
+    Name = "Fling Target",
+    CurrentValue = false,
+    Flag = "Toggle11",
+    Callback = function(Value)
+        FlingTarget = Value
+    end,
+})
+
+local ResolverToggle = CombatTab:CreateToggle({
+    Name = "Noclip",
+    CurrentValue = false,
+    Flag = "Toggle12",
+    Callback = function(Value)
+        Noclip = Value
+    end,
+})
+
+local ResolverToggle = CombatTab:CreateToggle({
+    Name = "ESP",
+    CurrentValue = false,
+    Flag = "Toggle13",
+    Callback = function(Value)
+        ESP = Value
+    end,
+})
+
+-- Config Tab --
+
+local LockConfigSection = ConfigsTab:CreateSection("Lock-Config")
+
+-- Lock Config --
+
+local CamKeyConfig = 'X'
+local CamOffsetConfig = .15
+local OrbitKeyConfig = 'V'
+local OrbitHeightConfig = 25
+local InsatKillConfig = 'C'
+local InstaKillToggleConfig = 'J'
+
+local CamKeyInput = ConfigsTab:CreateInput({
+	Name = "Camlock Keybind",
+	CurrentValue = "X",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input1",
+	Callback = function(Text)
+		CamKeyConfig = Text
+	end,
+})
+
+local CamOffsetInput = ConfigsTab:CreateInput({
+	Name = "Camlock Offset",
+	CurrentValue = ".15",
+	PlaceholderText = "Offset",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input2",
+	Callback = function(Text)
+		CamKeyConfig = tonumber(Text)
+	end,
+})
+
+local OrbitKeyInput = ConfigsTab:CreateInput({
+	Name = "Orbit-Lock Keybind",
+	CurrentValue = "V",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input3",
+	Callback = function(Text)
+		OrbitKeyConfig = Text
+	end,
+})
+
+local OrbitHeightInput = ConfigsTab:CreateInput({
+	Name = "Orbit-Lock Height",
+	CurrentValue = "25",
+	PlaceholderText = "Height",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input4",
+	Callback = function(Text)
+		OrbitHeightConfig = tonumber(Text)
+	end,
+})
+
+local InstaKillKeyInput = ConfigsTab:CreateInput({
+	Name = "Insta-Kill Last Target Keybind",
+	CurrentValue = "C",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input5",
+	Callback = function(Text)
+		OrbitKeyConfig = Text
+	end,
+})
+
+local InstaKillKeyInput = ConfigsTab:CreateInput({
+	Name = "Insta-Kill Toggle (Camlock + Orbit-Lock) Keybind",
+	CurrentValue = "J",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input6",
+	Callback = function(Text)
+		OrbitKeyConfig = Text
+	end,
+})
+
+-- Safety Config --
+
+local SafetyConfigSection = ConfigsTab:CreateSection("Safety-Config")
+
+local AntiKeyConfig = 'Y'
+local DesyncKeyConfig = 'B'
+local ResolverKeyConfig = 'U'
+
+local AntiKeyInput = ConfigsTab:CreateInput({
+	Name = "Anti-Lock Keybind",
+	CurrentValue = "Y",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input7",
+	Callback = function(Text)
+		AntiKeyConfig = Text
+	end,
+})
+
+local DesyncKeyInput = ConfigsTab:CreateInput({
+	Name = "Desync Keybind",
+	CurrentValue = "B",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input8",
+	Callback = function(Text)
+		DesyncKeyConfig = Text
+	end,
+})
+
+local ResolverKeyInput = ConfigsTab:CreateInput({
+	Name = "Resolver Keybind",
+	CurrentValue = "U",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input9",
+	Callback = function(Text)
+		ResolverKeyConfig = Text
+	end,
+})
+
+-- Misc Config --
+
+local Speed = 2.5
+local TpTargetKeyConfig = 'T'
+local FlingTargetKeyConfig = 'H'
+local NoclipKeyConfig = 'N'
+local ESPKeyConfig = 'L'
+
+local SpeedInput = ConfigsTab:CreateInput({
+	Name = "Speed",
+	CurrentValue = "2.5",
+	PlaceholderText = "Speed",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input0",
+	Callback = function(Text)
+		Speed = tonumber(Text)
+	end,
+})
+
+local TpTargetKeyInput = ConfigsTab:CreateInput({
+	Name = "Teleport To Last Target Keybind",
+	CurrentValue = "T",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input10",
+	Callback = function(Text)
+		ResolverKeyConfig = Text
+	end,
+})
+
+local FlingTargetKeyInput = ConfigsTab:CreateInput({
+	Name = "Fling Target Keybind",
+	CurrentValue = "H",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input11",
+	Callback = function(Text)
+		FlingTargetKeyConfig = Text
+	end,
+})
+
+local NoclipKeyInput = ConfigsTab:CreateInput({
+	Name = "Noclip Keybind",
+	CurrentValue = "N",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input12",
+	Callback = function(Text)
+		NoclipKeyConfig = Text
+	end,
+})
+
+local ESPKeyInput = ConfigsTab:CreateInput({
+	Name = "ESP Keybind",
+	CurrentValue = "L",
+	PlaceholderText = "Keybind",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input13",
+	Callback = function(Text)
+		ESPKeyConfig = Text
+	end,
+})
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+--// Main Source Script \\--
 
 local UIS = game:GetService("UserInputService")
 local Player = game:GetService("Players").LocalPlayer
@@ -1310,19 +391,12 @@ local B_Active = false
 local J_Active = false
 local lastTarget = ""
 
-local SpeedKey = "Z"
-local CamKey = "X"
-local OrbitKey = "V"
-local AntiKey = "Y"
-local CFrmDesyncKey = "B"
-local ResolverKey = "U"
-local FlingKey = "H"
-local ESPKey = "L"
-
 local Offset = .15
-local Speed = 2.5
+local Speed = true
 local Height = 25
 local Radius = 10
+
+--// Code \\--
 
 task.spawn(function()
 	Player.Character:WaitForChild("BodyEffects"):WaitForChild("Movement"):FindFirstChild("NoJumping")
@@ -1332,121 +406,14 @@ task.spawn(function()
 	end)
 end)
 
-task.spawn(
-	function()
-		while task.wait(1) do
-			task.spawn(
-				function()
-					CamKey =
-						game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("CamlockSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Keybind").Text
-					Offset =
-						tonumber(
-							game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("CamlockSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Offset").Text
-						)
-				end
-			)
-		end
-	end
-)
-
-task.spawn(
-	function()
-		while task.wait(1) do
-			task.spawn(
-				function()
-					SpeedKey =
-						game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("SpeedSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Keybind").Text
-					Speed =
-						tonumber(
-							game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("SpeedSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Speed").Text
-						)
-				end
-			)
-		end
-	end
-)
-
-task.spawn(
-	function()
-		while task.wait(1) do
-			task.spawn(
-				function()
-					OrbitKey =
-						game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("OrbitSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Keybind").Text
-					Height =
-						tonumber(
-							game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("OrbitSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Height").Text
-						)
-				end
-			)
-		end
-	end
-)
-
-task.spawn(
-	function()
-		while task.wait(1) do
-			task.spawn(
-				function()
-					CFrmDesyncKey =
-						game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("CFrameDesyncSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Keybind").Text
-					Radius =
-						tonumber(
-							game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("CFrameDesyncSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Radius").Text
-						)
-				end
-			)
-		end
-	end
-)
-
-task.spawn(
-	function()
-		while task.wait(1) do
-			task.spawn(
-				function()
-					ResolverKey =
-						game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("ResolverSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Keybind").Text
-				end
-			)
-		end
-	end
-)
-
-task.spawn(
-	function()
-		while task.wait(1) do
-			task.spawn(
-				function()
-					FlingKey =
-						game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("FlingSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Keybind").Text
-				end
-			)
-		end
-	end
-)
-
-task.spawn(
-	function()
-		while task.wait(1) do
-			task.spawn(
-				function()
-					ESPKey =
-						game.Players.LocalPlayer.PlayerGui:WaitForChild("XarGui1"):WaitForChild("ESPSettings"):FindFirstChildOfClass("Frame"):WaitForChild("Keybind").Text
-				end
-			)
-		end
-	end
-)
-
 local function LockMethod(Method, Target)
 	local Result
 	task.spawn(
 		function()
 			if Method == "Velocity" then
-				Result = Target.Position + Target.Velocity * Offset
+				Result = Target.Position + Target.Velocity * CamOffsetConfig
 			elseif Method == "MoveDirection" then
-				Result = Target.Position + Vector3.new(0, 1, 0) + (Target.Parent.Humanoid.MoveDirection * Offset * Target.Parent.Humanoid.WalkSpeed)
+				Result = Target.Position + Vector3.new(0, 1, 0) + (Target.Parent.Humanoid.MoveDirection * CamOffsetConfig * Target.Parent.Humanoid.WalkSpeed)
 			end
 		end
 	)
@@ -1455,12 +422,14 @@ end
 
 --// Speed \--
 
+local SpeedKeyConfig = 'Z'
+
 UIS.InputBegan:Connect(
 	function(Input, IsTyping)
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode[SpeedKey] and Z_Active == false then
+		if Input.KeyCode == Enum.KeyCode[SpeedKeyConfig] and Z_Active == false then
 			task.spawn(function()
 				Z_Active = true
 				task.spawn(function()
@@ -1473,7 +442,7 @@ UIS.InputBegan:Connect(
 					end
 				end)
 			end)
-		elseif Input.KeyCode == Enum.KeyCode[SpeedKey] and Z_Active == true then
+		elseif Input.KeyCode == Enum.KeyCode[SpeedKeyConfig] and Z_Active == true then
 			Z_Active = false
 		end
 	end
@@ -1486,7 +455,7 @@ UIS.InputBegan:Connect(
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode[CamKey] then
+		if Input.KeyCode == Enum.KeyCode[CamKeyConfig] and Camlock == true then
 			if X_Active == false then
 				X_Active = true
 				local nearestTarget = ""
@@ -1552,15 +521,14 @@ UIS.InputBegan:Connect(function(Input, IsTyping)
 	if IsTyping then
 		return
 	end
-    if Input.KeyCode == Enum.KeyCode.J then
+    if Input.KeyCode == Enum.KeyCode[InstaKillToggleConfig] and InstantKillVal == true then
         J_Active = not J_Active
-        game.StarterGui:SetCore(
-            "SendNotification",
-            {
-                Title = "Xar | Insta-Kill Toggle",
-                Text = tostring(J_Active)
-            }
-        )
+		Rayfield:Notify({
+			Title = "Xar | Insta-Kill Toggle",
+			Content = tostring(J_Active),
+			Duration = 3.5,
+			Image = 4483362458,
+		 })
     end
 end)
 
@@ -1571,11 +539,12 @@ UIS.InputBegan:Connect(
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode[OrbitKey] then
+		if Input.KeyCode == Enum.KeyCode[OrbitKeyConfig] and Orbit == true then
 			if V_Active == false then
 				V_Active = true
 
                     -- NORMAL VERSION
+
                     local nearestTarget = ""
                     local nearestDistance = math.huge
     
@@ -1618,7 +587,7 @@ UIS.InputBegan:Connect(
                             nearestTarget.Character.HumanoidRootPart.Size = Vector3.new(35,38,35)
                             --nearestTarget.Character.HumanoidRootPart.Transparency = 1
                             nearestTarget.Character.HumanoidRootPart.CanCollide = false
-                            game:GetService("RunService").Stepped:connect(
+                            game:GetService("RunService").Stepped:Connect(
                             function(t, dt)
                                 if V_Active == false then
                                     planet = nil
@@ -1632,7 +601,7 @@ UIS.InputBegan:Connect(
                                     nearestTarget.Character.HumanoidRootPart.CanCollide = false
                                     rot = rot + dt * ROTSPEED
                                     planet.CFrame =
-                                        ROTATION * CFrame.new(sin(rot) * ECLIPSE, Height, cos(rot) * RADIUS) +
+                                        ROTATION * CFrame.new(sin(rot) * ECLIPSE, OrbitHeightConfig, cos(rot) * RADIUS) +
                                         center.Position
 
                                         task.spawn(function()
@@ -1698,7 +667,7 @@ UIS.InputBegan:Connect(
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode.T then
+		if Input.KeyCode == Enum.KeyCode[TpTargetKeyConfig] and TpTarget == true then
 			Player.Character.HumanoidRootPart.CFrame =
 				lastTarget.Character.HumanoidRootPart.CFrame * CFrame.new(0, 3, 1.75)
 		end
@@ -1711,15 +680,14 @@ UIS.InputBegan:Connect(function(Input,IsTyping)
 	if IsTyping then
 		return
 	end
-	if Input.KeyCode == Enum.KeyCode[CFrmDesyncKey] and B_Active == false then 
+	if Input.KeyCode == Enum.KeyCode[DesyncKeyConfig] and B_Active == false and Desync == true then 
 		B_Active = true
-        game.StarterGui:SetCore(
-            "SendNotification",
-            {
-                Title = "Xar | CFrame Desync",
-                Text = tostring(B_Active)
-            }
-        )
+		Rayfield:Notify({
+			Title = "Xar | Desync",
+			Content = tostring(B_Active),
+			Duration = 3.5,
+			Image = 4483362458,
+		})
 		local Part
 		task.spawn(function()
 			Part = Instance.new("Part")
@@ -1750,15 +718,14 @@ UIS.InputBegan:Connect(function(Input,IsTyping)
 				Part.CFrame = OldPos * CFrame.new(0,3,0)
 			end)
 		end)
-	elseif Input.KeyCode == Enum.KeyCode[CFrmDesyncKey] and B_Active == true then
+	elseif Input.KeyCode == Enum.KeyCode[DesyncKeyConfig] and B_Active == true then
 		B_Active = false
-        game.StarterGui:SetCore(
-            "SendNotification",
-            {
-                Title = "Xar | CFrame Desync",
-                Text = tostring(B_Active)
-            }
-        )
+		Rayfield:Notify({
+			Title = "Xar | Desync",
+			Content = tostring(B_Active),
+			Duration = 3.5,
+			Image = 4483362458,
+		})
 		workspace:FindFirstChild("DesyncPart"):Destroy()
 	end
 end)
@@ -1770,23 +737,22 @@ UIS.InputBegan:Connect(
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode[AntiKey] then
+		if Input.KeyCode == Enum.KeyCode[AntiKeyConfig] and AntiLock == true then
 			if Y_Active == false then
 				Y_Active = true
 				task.spawn(
 					function()
-						game.StarterGui:SetCore(
-							"SendNotification",
-							{
-								Title = "Xar | Anti-Lock",
-								Text = "On"
-							}
-						)
+						Rayfield:Notify({
+							Title = "Xar | Anti-Lock",
+							Content = tostring(Y_Active),
+							Duration = 3.5,
+							Image = 4483362458,
+						 })
 					end
 				)
 				task.spawn(
 					function()
-						game:GetService("RunService").heartbeat:Connect(
+						game:GetService("RunService").Heartbeat:Connect(
 						function()
 							if Y_Active == false then
 								return
@@ -1803,18 +769,13 @@ UIS.InputBegan:Connect(
 					end
 				)
 			elseif Y_Active == true then
-				task.spawn(
-					function()
-						game.StarterGui:SetCore(
-							"SendNotification",
-							{
-								Title = "Xar | Anti-Lock",
-								Text = "Off"
-							}
-						)
-					end
-				)
 				Y_Active = false
+                		Rayfield:Notify({
+							Title = "Xar | Anti-Lock",
+							Content = tostring(Y_Active),
+							Duration = 3.5,
+							Image = 4483362458,
+						 })
 			end
 		end
 	end
@@ -1826,33 +787,31 @@ UIS.InputBegan:Connect(function(Input, IsTyping)
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode[ResolverKey] then
+		if Input.KeyCode == Enum.KeyCode[ResolverKeyConfig] and Resolver == true then
 			if U_Active == false then
 				U_Active = true
 				task.spawn(
 					function()
-						game.StarterGui:SetCore(
-							"SendNotification",
-							{
-								Title = "Xar | Resolver",
-								Text = "On"
-							}
-						)
+						Rayfield:Notify({
+							Title = "Xar | Resolver",
+							Content = tostring(U_Active),
+							Duration = 3.5,
+							Image = 4483362458,
+						})
 					end
 				)
 			elseif U_Active == true then
 				task.spawn(
 					function()
-						game.StarterGui:SetCore(
-							"SendNotification",
-							{
-								Title = "Xar | Resolver",
-								Text = "Off"
-							}
-						)
 					end
 				)
 				U_Active = false
+				Rayfield:Notify({
+					Title = "Xar | Resolver",
+					Content = tostring(U_Active),
+					Duration = 3.5,
+					Image = 4483362458,
+				})
 			end
 		end
 	end)
@@ -1864,7 +823,7 @@ UIS.InputBegan:Connect(
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode[ESPKey] then
+		if Input.KeyCode == Enum.KeyCode[ESPKeyConfig] and ESP == true then
 			if L_Active == false then
 				L_Active = true
 				task.spawn(
@@ -2366,7 +1325,7 @@ UIS.InputBegan:Connect(
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode[FlingKey] then
+		if Input.KeyCode == Enum.KeyCode[FlingTargetKeyConfig] and FlingTarget == true then
 			task.spawn(
 				function()
 					local nearestTarget = ""
@@ -2438,20 +1397,20 @@ UIS.InputBegan:Connect(
 		if IsTyping then
 			return
 		end
-		if Input.KeyCode == Enum.KeyCode.N then
+		if Input.KeyCode == Enum.KeyCode[NoclipKeyConfig] and Noclip == true then
 			if N_Active == false then
 				task.spawn(
 					function()
-						game.StarterGui:SetCore(
-							"SendNotification",
-							{
-								Title = "Xar | Noclip",
-								Text = "On"
-							}
-						)
 					end
 				)
 				N_Active = true
+
+				Rayfield:Notify({
+					Title = "Xar | Noclip",
+					Content = tostring(N_Active),
+					Duration = 3.5,
+					Image = 4483362458,
+				})
 				for i, v in next, Player.Character:GetChildren() do
 					if v:IsA("BasePart") or v:IsA("Part") and v.CanCollide == true then
 						table.insert(NoclipTable, v.Name)
@@ -2481,16 +1440,15 @@ UIS.InputBegan:Connect(
 			else
 				task.spawn(
 					function()
-						game.StarterGui:SetCore(
-							"SendNotification",
-							{
-								Title = "Xar | Noclip",
-								Text = "Off"
-							}
-						)
 					end
 				)
 				N_Active = false
+				Rayfield:Notify({
+					Title = "Xar | Noclip",
+					Content = tostring(N_Active),
+					Duration = 3.5,
+					Image = 4483362458,
+				})
 				for i, v in next, Player.Character:GetChildren() do
 					if v:IsA("BasePart") or v:IsA("Part") and not table.find(NoclipTable, v.Name) then
 						task.spawn(
@@ -2511,24 +1469,39 @@ UIS.InputBegan:Connect(
 	end
 )
 
---// Buy-Armor \\--
+--// Auto-Armor \\--
 
-UIS.InputBegan:Connect(function(Input, IsTyping)
-    if IsTyping then
-        return
-    end
-    if Input.KeyCode == Enum.KeyCode.LeftAlt then
-        pcall(function()
-            local old_cfrm = Player.Character:WaitForChild("HumanoidRootPart").CFrame
-            task.wait()
-            Player.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.Ignored.Shop['[High-Medium Armor] - $2440'].Head.CFrame
-            task.wait(.25)
-            fireclickdetector(workspace.Ignored.Shop['[High-Medium Armor] - $2440'].ClickDetector)
-            task.wait(.1)
-            Player.Character:WaitForChild("HumanoidRootPart").CFrame = old_cfrm
-        end)
-    end
+task.spawn(function()
+	while task.wait() do
+		pcall(function()
+			if Player.Character.BodyEffects.Armor.Value <= 75 and AutoArmor == true then
+				local old_cfrm = Player.Character:WaitForChild("HumanoidRootPart").CFrame
+				task.wait()
+				Player.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.Ignored.Shop['[High-Medium Armor] - $2513'].Head.CFrame
+				task.wait(.25)
+				fireclickdetector(workspace.Ignored.Shop['[High-Medium Armor] - $2513'].ClickDetector)
+				task.wait(.1)
+				Player.Character:WaitForChild("HumanoidRootPart").CFrame = old_cfrm
+				task.wait(1)
+			end
+		end)
+	end
 end)
+
+--// Anti-Stomp \\--
+
+task.spawn(function()
+	-- Reset when low
+	while task.wait() do
+		pcall(function()
+			if Player.Character.Humanoid.Health <= 1 and AntiStomp == true then
+				Player.Character.Humanoid.Health = 0
+			end
+		end)
+	end
+end)
+
+--// Random Code \\--
 
 task.spawn(
 	function()
@@ -2544,12 +1517,8 @@ task.spawn(
 )
 
 task.spawn(function()
-	game.StarterGui:SetCore("SendNotification", {
-		Title = "Xar | V1.3",
-		Text = "Xar was made by @x7ant | rblx/discord (P TO OPEN MENU)"
-	})
 	task.spawn(function()
-		local wl = {"9hellz", "destinysmyforever", "5partz", "x1aznt", "destinystoy", "anthonysmyforever"}
+		local wl = {"9hellz", "destinysmyforever", "5partz", "x1aznt", "destinystoy", "anthonysmyforever", 'LXC7', '139J', '7axnt'}
 		for i,v in next, game.Players:GetPlayers() do
 			if table.find(wl, v.Name) then
 				v.Character.Humanoid.DisplayName = "[🛡] "..v.Character.Humanoid.DisplayName
