@@ -1306,6 +1306,7 @@ local Y_Active = false
 local L_Active = false
 local N_Active = false
 local U_Active = false
+local B_Active = false
 local J_Active = false
 local lastTarget = ""
 
@@ -1520,7 +1521,7 @@ UIS.InputBegan:Connect(
                 nearestTarget.Character.HumanoidRootPart.Size = Vector3.new(15,8,10)
 				while task.wait() do
 					if X_Active == true then
-						task.spawn(
+						pcall(
 							function()
 								local part = nearestTarget.Character.HumanoidRootPart
                                 nearestTarget.Character.HumanoidRootPart.CanCollide = false
@@ -1545,6 +1546,24 @@ UIS.InputBegan:Connect(
 	end
 )
 
+--// Insta-Kill Toggle \--
+
+UIS.InputBegan:Connect(function(Input, IsTyping)
+	if IsTyping then
+		return
+	end
+    if Input.KeyCode == Enum.KeyCode.J then
+        J_Active = not J_Active
+        game.StarterGui:SetCore(
+            "SendNotification",
+            {
+                Title = "Xar | Insta-Kill Toggle",
+                Text = tostring(J_Active)
+            }
+        )
+    end
+end)
+
 --// Orbit \\--
 
 UIS.InputBegan:Connect(
@@ -1555,85 +1574,114 @@ UIS.InputBegan:Connect(
 		if Input.KeyCode == Enum.KeyCode[OrbitKey] then
 			if V_Active == false then
 				V_Active = true
-				local nearestTarget = ""
-				local nearestDistance = math.huge
 
-				local Max_Distance = math.huge
-				for i, v in ipairs(game.Players:GetPlayers()) do
-					if
-						v ~= Player and v.Character and v.Character:FindFirstChild("Humanoid") and
-						v.Character:FindFirstChild("Humanoid").Health ~= 0
-					then
-						if
-							v.Character:FindFirstChild("BodyEffects") ~= nil and
-							v.Character.BodyEffects:FindFirstChild("K.O") ~= nil and
-							v.Character.BodyEffects["K.O"].Value ~= true
-						then
-							local TargetHRP = v.Character.HumanoidRootPart
-							local mag = (Mouse.Hit.Position - TargetHRP.Position).magnitude
-							if mag < nearestDistance and mag <= Max_Distance then
-								nearestDistance = mag
-								nearestTarget = v
-							end
-						end
-					end
-				end
-				if nearestTarget == "" or nearestTarget == Player then
-					return
-				end
-				lastTarget = nearestTarget
-				task.spawn(
-					function()
-						local center = nearestTarget.Character.HumanoidRootPart
-						local planet = Player.Character.HumanoidRootPart
-						local ORBIT_TIME = .1
-						local RADIUS = 5
-						local ECLIPSE = 1
-						local ROTATION = CFrame.Angles(0, 0, 0)
-						local sin, cos = math.sin, math.cos
-						local ROTSPEED = math.pi * 2 / ORBIT_TIME
-						ECLIPSE = ECLIPSE * RADIUS
-						local rot = 0
-                        nearestTarget.Character.HumanoidRootPart.Size = Vector3.new(35,38,35)
-                        --nearestTarget.Character.HumanoidRootPart.Transparency = 1
-                        nearestTarget.Character.HumanoidRootPart.CanCollide = false
-						game:GetService("RunService").Stepped:connect(
-						function(t, dt)
-							if V_Active == false then
-								planet = nil
-								center = nil
-                                nearestTarget.Character.HumanoidRootPart.Size = Vector3.new(2,2,1)
-								nearestTarget = ""
-								return
-							else
-                                nearestTarget.Character.HumanoidRootPart.CanCollide = false
-								rot = rot + dt * ROTSPEED
-								planet.CFrame =
-									ROTATION * CFrame.new(sin(rot) * ECLIPSE, Height, cos(rot) * RADIUS) +
-									center.Position
-							end
-						end
-						)
-					end
-				)
-				while task.wait() do
-					if V_Active == true then
-						task.spawn(
-							function()
-								local part = nearestTarget.Character.HumanoidRootPart
-								if U_Active == false then
-									local Calculated_Offset = LockMethod("Velocity", part)
-									workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, Calculated_Offset)
-								else
-									local Calculated_Offset = LockMethod("MoveDirection", part)
-									workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, Calculated_Offset)
-								end
-							end
-						)
-					else
-						return
-					end
-				end
+                    -- NORMAL VERSION
+                    local nearestTarget = ""
+                    local nearestDistance = math.huge
+    
+                    local Max_Distance = math.huge
+                    for i, v in ipairs(game.Players:GetPlayers()) do
+                        if
+                            v ~= Player and v.Character and v.Character:FindFirstChild("Humanoid") and
+                            v.Character:FindFirstChild("Humanoid").Health ~= 0
+                        then
+                            if
+                                v.Character:FindFirstChild("BodyEffects") ~= nil and
+                                v.Character.BodyEffects:FindFirstChild("K.O") ~= nil and
+                                v.Character.BodyEffects["K.O"].Value ~= true
+                            then
+                                local TargetHRP = v.Character.HumanoidRootPart
+                                local mag = (Mouse.Hit.Position - TargetHRP.Position).magnitude
+                                if mag < nearestDistance and mag <= Max_Distance then
+                                    nearestDistance = mag
+                                    nearestTarget = v
+                                end
+                            end
+                        end
+                    end
+                    if nearestTarget == "" or nearestTarget == Player then
+                        return
+                    end
+                    lastTarget = nearestTarget
+                    pcall(
+                        function()
+                            local center = nearestTarget.Character.HumanoidRootPart
+                            local planet = Player.Character.HumanoidRootPart
+                            local ORBIT_TIME = .1
+                            local RADIUS = 5
+                            local ECLIPSE = 1
+                            local ROTATION = CFrame.Angles(0, 0, 0)
+                            local sin, cos = math.sin, math.cos
+                            local ROTSPEED = math.pi * 2 / ORBIT_TIME
+                            ECLIPSE = ECLIPSE * RADIUS
+                            local rot = 0
+                            nearestTarget.Character.HumanoidRootPart.Size = Vector3.new(35,38,35)
+                            --nearestTarget.Character.HumanoidRootPart.Transparency = 1
+                            nearestTarget.Character.HumanoidRootPart.CanCollide = false
+                            game:GetService("RunService").Stepped:connect(
+                            function(t, dt)
+                                if V_Active == false then
+                                    planet = nil
+                                    center = nil
+                                    nearestTarget.Character.HumanoidRootPart.Size = Vector3.new(2,2,1)
+                                    nearestTarget = ""
+                                    return
+                                else
+                                    nearestTarget.Character.HumanoidRootPart.CanCollide = false
+                                    rot = rot + dt * ROTSPEED
+                                    planet.CFrame =
+                                        ROTATION * CFrame.new(sin(rot) * ECLIPSE, Height, cos(rot) * RADIUS) +
+                                        center.Position
+
+                                        task.spawn(function()
+                                            if J_Active == true then
+                                            task.wait(.5)
+    
+                                            local Target = nearestTarget.Character
+    
+                                            local args = {
+                                                [1] = "Shoot"
+                                            }
+                                        
+                                            game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").RemoteEvent:FireServer(unpack(args))
+                                        
+                                            local args = {
+                                                [1] = "ShootGun",
+                                                [2] = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle,
+                                                [3] = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle.Position,
+                                                [4] = Target.Head.Position,
+                                                [5] = Target.Head,
+                                                [6] = Vector3.new(0, 1, 0)
+                                            }
+                                        
+                                            game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+                                        
+                                            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Revolver]").RemoteEvent:FireServer()
+                                        end
+                                        end)
+                                end
+                            end
+                            )
+                        end
+                    )
+                    while task.wait() do
+                        if V_Active == true then
+                            pcall(
+                                function()
+                                    local part = nearestTarget.Character.HumanoidRootPart
+                                    if U_Active == false then
+                                        local Calculated_Offset = LockMethod("Velocity", part)
+                                        workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, Calculated_Offset)
+                                    else
+                                        local Calculated_Offset = LockMethod("MoveDirection", part)
+                                        workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, Calculated_Offset)
+                                    end
+                                end
+                            )
+                        else
+                            return
+                        end
+                    end
 			elseif V_Active == true then
 				V_Active = false
 			end
@@ -1661,8 +1709,15 @@ UIS.InputBegan:Connect(function(Input,IsTyping)
 	if IsTyping then
 		return
 	end
-	if Input.KeyCode == Enum.KeyCode[CFrmDesyncKey] and J_Active == false then 
-		J_Active = true
+	if Input.KeyCode == Enum.KeyCode[CFrmDesyncKey] and B_Active == false then 
+		B_Active = true
+        game.StarterGui:SetCore(
+            "SendNotification",
+            {
+                Title = "Xar | CFrame Desync",
+                Text = tostring(B_Active)
+            }
+        )
 		local Part
 		task.spawn(function()
 			Part = Instance.new("Part")
@@ -1673,7 +1728,7 @@ UIS.InputBegan:Connect(function(Input,IsTyping)
 			Part.Size = Vector3.new(1,1,1)
 			task.spawn(function()
 				while task.wait(.1) do
-					if J_Active == false then break end
+					if B_Active == false then break end
 					Part.BrickColor = BrickColor.new("Really red")
 				end
 			end)
@@ -1682,7 +1737,7 @@ UIS.InputBegan:Connect(function(Input,IsTyping)
 		workspace.CurrentCamera.CameraSubject = Part
 		task.spawn(function()
 			game:GetService('RunService').Heartbeat:Connect(function()
-				if J_Active ~= true then return end
+				if B_Active ~= true then return end
 				local LocalPlayer = Player
 				local OldPos = LocalPlayer.Character.HumanoidRootPart.CFrame
 				local Origin = LocalPlayer.Character.HumanoidRootPart
@@ -1693,8 +1748,15 @@ UIS.InputBegan:Connect(function(Input,IsTyping)
 				Part.CFrame = OldPos * CFrame.new(0,3,0)
 			end)
 		end)
-	elseif Input.KeyCode == Enum.KeyCode[CFrmDesyncKey] and J_Active == true then
-		J_Active = false
+	elseif Input.KeyCode == Enum.KeyCode[CFrmDesyncKey] and B_Active == true then
+		B_Active = false
+        game.StarterGui:SetCore(
+            "SendNotification",
+            {
+                Title = "Xar | CFrame Desync",
+                Text = tostring(B_Active)
+            }
+        )
 		workspace:FindFirstChild("DesyncPart"):Destroy()
 	end
 end)
@@ -2507,7 +2569,7 @@ end)
 task.spawn(function()
 	while task.wait() do
 		task.spawn(function()
-			if J_Active ~= true then
+			if B_Active ~= true then
 				workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 				workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
 			end
